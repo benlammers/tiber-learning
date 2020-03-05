@@ -1,0 +1,20 @@
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Francois One', sans-serif;
+
+  /* Cannot select any text on the website */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

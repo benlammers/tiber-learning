@@ -1,0 +1,112 @@
+
+.contact {
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 8rem;
+
+    margin-bottom: 6rem;
+
+
+    &__form {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+        animation: fadeIn .8s; //ANIMATION
+
+        width: 100%;
+        background: linear-gradient(to bottom, $color-secondary 0%, $color-secondary 50%, $color-primary 50%, $color-primary 50%, $color-primary 100%);
+        box-shadow: $shadow-dark-3;
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 2vh repeat(3, min-content) 2vh;
+        column-gap: 2rem;
+        row-gap: 2rem;
+
+        & > * {
+            font-family: $font-display;
+            padding: 0.5rem 2rem;
+            font-size: 2.4rem;
+            border: $color-grey-light-1 2px solid;
+            border-radius: 5px;
+            background-color: #FFF;
+        }
+
+        &--heading {
+            grid-row: 2 / 3;
+            grid-column: 2 / 4;
+            font-family: $font-display;
+            min-width: max-content;
+            font-size: 3rem;
+        }
+
+        &--message {
+            grid-row: 3 / 4;
+            grid-column: 2 / 12;
+            height: 16rem;
+            resize: none;
+            padding: 1rem 2rem;
+        }
+
+        &--name {
+            grid-row: 4 / 5;
+            grid-column: 2 / 5;
+        }
+
+        &--email {
+            grid-row: 4 / 5;
+            grid-column: 5 / 10;
+        }
+
+        &--button {
+            grid-row: 4 / 5;
+            grid-column: 10 / 12;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                background-color: $color-grey-light-1;
+            }
+        }
+    }
+}
+
+.partners {
+    grid-row: 3 / 4;
+    grid-column: 2 / 8;
+    width: 100%;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: 1fr max-content 1fr;
+
+    &__heading {
+        font-family: $font-display;
+        font-size: 3.6rem;
+        grid-column: 1 / -1;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__content {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        column-gap: 10rem;
+    }
+
+    &__link {
+        height: 14rem; // Defines height of images
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        display: block;
+        object-fit: contain;
+    }
+}

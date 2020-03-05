@@ -1,0 +1,33 @@
+
+.member {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover &__image {
+        transform: translateY(-4px);
+        box-shadow: $shadow-dark-2;
+    }
+
+    &:hover &__name {
+        transform: translateY(1px);
+    }
+    
+    &__image {
+        border-radius: 50%;
+        width: 60%;
+        height: auto;
+        box-shadow: $shadow-dark-1;
+        margin-bottom: 1rem;
+        transition: all .2s;
+    }
+
+    &__name {
+        font-family: $font-primary;
+        font-size: 2rem;
+        font-weight: 600;
+        transition: all .2s;
+    }
+}
+

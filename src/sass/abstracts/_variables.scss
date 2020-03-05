@@ -1,0 +1,40 @@
+
+// COLOR VARIABLES
+$color-primary: #A8EFF2;
+$color-primary-dark: #7CD4EC;
+
+$color-secondary: #FFEDA3;
+$color-secondary-dark: #F3C200;
+
+$color-grey-light-1: #EDEDED;
+$color-grey-light-2: #AAA;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$color-error: #A81E1E;
+$color-success: #FFF;
+
+// FONT VARIABLES
+$font-primary: "Lato", sans-serif;
+$font-display: "Francois One", sans-serif;
+
+// LAYOUT VARIABLES
+$header-height: 8rem;
+$footer-height: 18rem;
+$get-started-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px  800/16 = 50em
+$bp-small: 37.5em; // 600px
+
+// SHADOWS
+$shadow-dark-1: 0 .5rem 1rem rgba(0,0,0,.3);
+$shadow-dark-2: 0 1rem 1rem rgba(0,0,0,.3);
+$shadow-dark-3: 0 0 1rem rgba(0,0,0,.3);
+$shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+// TRANSITION SPEED 
+$card-transition-speed: .4s;

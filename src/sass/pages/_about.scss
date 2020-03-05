@@ -1,0 +1,188 @@
+
+.about {
+    display: grid;
+    grid-template-columns: 16rem repeat(5, 1fr) 16rem;
+    grid-template-rows: repeat(3, calc((100vh - #{ $header-height })/2));
+    column-gap: 1rem;
+
+    align-items: center;
+    justify-items: center;
+
+    &__paragraph {
+        font-family: $font-primary;
+        font-size: 2.5rem;
+        z-index: 1;
+        width: 80%;
+    
+        &--1 {
+            text-align: left;
+            grid-row: 1 / 2;
+            grid-column: 2 / span 3;
+        }
+
+        &--2 {
+            text-align: right;
+            grid-row: 2 / 3;
+            grid-column: 4 / span 3;
+        }
+        &--3 {
+            text-align: center;
+            grid-row: 3 / 4;
+            grid-column: 3 / span 3;
+        }
+    }
+
+    &__background {
+        display: block;
+        height: 70%;
+        width: 100%;
+        z-index: 0;
+
+        &--1 {
+            grid-row: 1 / 2;
+            grid-column: 2 / span 3;
+        }
+
+        &--2 {
+            grid-row: 2 / 3;
+            grid-column: 4 / span 3;
+        }
+
+        &--3 {
+            grid-row: 3 / 4;
+            grid-column: 3 / span 3;
+            height: 70%;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        z-index: 0;
+        padding: 2rem;
+
+        &--pig {
+            grid-row: 1 / 2;
+            grid-column: 6 / 7;
+        }
+
+        &--puzzle {
+            grid-row: 1 / 2;
+            grid-column: 5 / 6;
+        }
+
+        &--laptop {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+
+        &--camera {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+        }
+    }
+
+    &__info {
+        margin-top: 4rem;
+        grid-column: 4 / 5;
+        grid-column: 2 / 7;
+        width: 100%;
+        row-gap: 1rem;
+        display: grid;
+        grid-template-columns: 22rem 1fr;
+        grid-template-rows: repeat(4, 22rem);
+
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__card {
+        grid-column: 1 / 2;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 10px;
+        background-color: $color-secondary;
+        cursor: pointer;
+        transition: all $card-transition-speed;
+        box-shadow: $shadow-dark-3;
+
+        display: grid;
+        grid-template-rows: 1fr max-content max-content 1fr;
+        justify-items: center;
+        position: relative;
+
+        &--title {
+            grid-row: 3 / 4;
+
+            line-height: 1;
+            font-size: 2.4rem;
+            font-family: $font-display;
+            opacity: 1;
+            transition: all $card-transition-speed;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+            width: 21rem;
+            height: 21rem;
+        }
+
+        &:hover &--title {
+            font-size: 2.6rem;
+        }
+
+        &:hover .about__icon {
+            width: 16rem;
+        }
+
+        &--selected, &--selected:hover {
+            width: 22rem;
+            height: 22rem;
+            background-color: $color-primary;
+
+            & .about__card--title {
+                font-size: 2.7rem;
+            }
+
+            & .about__icon {
+                width: 18rem;
+            }
+        }
+
+        
+    }
+
+    &__icon {
+        grid-row: 2 / 3;
+
+        width: 14rem;
+        height: auto;
+        transition: all $card-transition-speed;
+        display: block;
+        object-fit: scale-down;
+    }
+
+    &__content {
+        grid-row: 1 / 5;
+        grid-column: 2 / 3;
+        height: 100%;
+        width: 100%;
+        padding: 0 4rem;
+
+        display: grid;
+        grid-template-rows: min-content 1fr;
+
+        &--heading {
+            font-size: 4rem;
+            font-family: $font-display;
+            text-align: center;
+        }
+
+        &--desc {
+            align-self: center;
+            font-size: 3rem;
+            font-family: $font-primary;
+        }
+    }
+}

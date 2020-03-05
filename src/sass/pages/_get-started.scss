@@ -1,0 +1,31 @@
+
+.get-started {
+    height: $get-started-height;
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    justify-items: center;
+    align-items: center;
+
+    &__heading {
+        font-size: 4rem;
+        grid-column: 4 / 10;
+        grid-row: 2 / 8;
+        z-index: 1;
+        text-align: center;
+
+        animation: moveInRight .6s ease-out; //set animation to be done 
+        
+    }
+
+    &__background {
+        object-fit: cover;
+        animation: moveInLeft .6s ease-out; //set animation to be done 
+
+        grid-row: 2 / 8;
+        grid-column: 3 / 11;
+    }
+}

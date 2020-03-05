@@ -1,0 +1,43 @@
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, max-content) 1fr;
+    grid-template-rows: 4fr repeat(2, max-content) 3fr;
+    height: $footer-height;
+
+    &__logo {
+        height: 5rem;
+        padding: 0 2rem;
+        display: block;
+
+        &-link {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__copyright {
+        grid-row: 3 / 4;
+        padding: 1rem;
+        justify-self: center;
+        grid-column: 1 / -1;
+        font-family: $font-primary;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+
+}
+
+.socials {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+
+    &__img {
+        height: 4rem;
+        padding: 0 1rem;
+        display: block;
+    }
+}

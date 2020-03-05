@@ -1,0 +1,54 @@
+
+.header {
+    display: grid;
+    width: 100%;
+    height: $header-height;
+
+    grid-template-columns: 1fr repeat(5, max-content);
+    column-gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5rem; 
+    padding-left: 2rem;   
+
+    &__logo-container {
+        display: flex;
+        padding-left: 2rem;
+    }
+
+    &__logo {
+        width: 14rem;
+        display: block;
+    }
+
+    &__links {
+        font-size: 1.8rem;
+        color: #000;
+        border: none;
+        border-radius: 0;
+        text-decoration: none;
+        font-family: $font-display;
+        text-transform: capitalize;
+        padding: .2rem 2rem;
+        cursor: pointer;
+        position: relative;
+
+        &:hover &--img {
+            transform: translateX(-5%);
+            opacity: .8;
+            transition: opacity .4s ease-in, transform .4s;
+        }
+
+        &--img {
+            opacity: 0;
+            transform: translateX(-70%);
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 110%;
+            height: 120%;
+            z-index: -1;
+            transition: opacity .3s, transform .8s;
+        }
+    }
+}
