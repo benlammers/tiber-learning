@@ -1,23 +1,29 @@
 
 import React, { useContext } from "react"
 
-import Card from "../components/Card";
-import Content from "../components/Content";
+import Card from "../../components/Card";
 
-import { InfoContext } from "../contexts/InfoContext"
+// Components
+import Delivery from "./components/Delivery";
+import Content from "./components/Content";
+import Length from "./components/Length";
+import Resources from "./components/Resources";
+
+import { InfoContext } from "../../contexts/InfoContext"
+
 
 const About = () => {
     
-    const background_1 = require("../img/about/first-paragraph.png");
-    const background_2 = require("../img/about/second-paragraph.png");
-    const background_3 = require("../img/about/third-paragraph.png");
+    const background_1 = require("../../img/about/first-paragraph.png");
+    const background_2 = require("../../img/about/second-paragraph.png");
+    const background_3 = require("../../img/about/third-paragraph.png");
 
-    const pig = require("../img/about/pig.png");
-    const laptop = require("../img/about/laptop.png");
-    const puzzle = require("../img/about/puzzle.png");
-    const camera = require("../img/about/camera.png");
+    const pig = require("../../img/about/pig.png");
+    const laptop = require("../../img/about/laptop.png");
+    const puzzle = require("../../img/about/puzzle.png");
+    const camera = require("../../img/about/camera.png");
 
-    const { content } = useContext(InfoContext);
+    const { content, selected } = useContext(InfoContext);
 
     return (
         <div className="about" >
@@ -42,7 +48,14 @@ const About = () => {
                         <Card item={ card } key={ index } />
                     )
                 }) }
-                <Content />
+                <div className="about__content">
+                    <h2 className="about__content--heading">{selected.name}</h2>
+
+                    { selected.name === "Delivery" && <Delivery content={ selected } /> }
+                    { selected.name === "Content" && <Content content={ selected } /> }
+                    { selected.name === "Length" && <Length content={ selected } /> }
+                    { selected.name === "Resources" && <Resources content={ selected } /> }
+                </div>
             </div>
         </div>
     )

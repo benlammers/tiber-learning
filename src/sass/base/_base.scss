@@ -9,11 +9,15 @@
 
 html {
     box-sizing: border-box;
+    overflow-y:scroll;
+
     font-size: 62.5%;  // 10px/16px = 62.5% -> 1rem = 10px
 
-    /*@media only screen and (max-width: $bp-largest) {
-        font-size: 50%;
-    } */
+    @media only screen and (max-width: $bp-largest) { font-size: 50%; }
+    @media only screen and (max-width: $bp-large) { font-size: 45%; }
+    @media only screen and (max-width: $bp-medium) { font-size: 40%; }
+    @media only screen and (max-width: $bp-small) { font-size: 35%; }
+    @media only screen and (max-width: $bp-smallest) { font-size: 30%; }
 }
 
 body {

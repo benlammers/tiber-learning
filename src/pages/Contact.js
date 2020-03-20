@@ -27,11 +27,6 @@ const Contact = () => {
     const [ email, setEmail ] = useState("");
     const [ message, setMessage ] = useState("");
 
-    const partners = [{name: "DDQIC", url: "https://www.queensu.ca/innovationcentre/", img: require("../img/sponsors/queens-innovation.jpg")},
-                        {name: "RBC", url: "https://www.rbc.com/dms/enterprise/futurelaunch/", img: require("../img/sponsors/rbc.png")},
-                        {name: "Enactus", url: "https://www.enactus.ca", img: require("../img/sponsors/enactus.png")},
-                        {name: "Queens", url: "https://www.queensu.ca/", img: require("../img/sponsors/queens.png")}];
-
     return (
         <div className="contact">
             <form className="contact__form" onSubmit= { sendEmail }>
@@ -43,16 +38,6 @@ const Contact = () => {
 
                 <input type="submit" className="contact__form--button" value="Submit" />
             </form>
-
-            <div className="partners">
-                <h3 className="partners__heading">Our Partners</h3>
-                <div className="partners__content">
-                    { partners.map((partner, index) => {
-                        return (
-                            <a className="partners__link" key={ index } href={ partner.url } target="_blank" rel="noopener noreferrer"><img className="partners__img" src={ partner.img } alt={ partner.name }/></a>
-                    )})}
-                </div>
-            </div>
         </div>
     )
 }
