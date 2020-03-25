@@ -11,11 +11,7 @@ Polishing Ideas
 
 
 About Page
-- Make first items smaller?
-- Rethink toggling of info? 
-     - Maybe just show it all
-     - Else make toggle buttons animate to show clickable
-     - GET RID OF LENGTH TAB
+- Make toggle buttons animate to show clickable
 
 Contact Page
 - Show response when contact email sent

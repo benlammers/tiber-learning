@@ -6,7 +6,6 @@ import Card from "../../components/Card";
 // Components
 import Delivery from "./components/Delivery";
 import Content from "./components/Content";
-import Length from "./components/Length";
 import Resources from "./components/Resources";
 
 import { InfoContext } from "../../contexts/InfoContext"
@@ -53,7 +52,6 @@ const About = () => {
 
                     { selected.name === "Delivery" && <Delivery content={ selected } /> }
                     { selected.name === "Content" && <Content content={ selected } /> }
-                    { selected.name === "Length" && <Length content={ selected } /> }
                     { selected.name === "Resources" && <Resources content={ selected } /> }
                 </div>
             </div>

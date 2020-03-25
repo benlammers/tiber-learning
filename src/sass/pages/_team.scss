@@ -104,6 +104,7 @@
     display: grid;
     row-gap: 2rem;
     grid-template-columns: 1fr max-content 1fr;
+    padding-bottom: 3rem;
 
     &__heading {
         font-family: $font-display;

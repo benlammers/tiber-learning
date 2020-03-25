@@ -3,26 +3,26 @@ import React from "react"
 
 import sprite from '../../../img/sprites.svg'
 
-const deliveryContent = [{name: "Video Modules", icon: "#icon-film", desc: "Video modules using characters that students can relate to and engaging animations."}, 
+const deliveryInfo = [{name: "Video Modules", icon: "#icon-film", desc: "Video modules using characters that students can relate to and engaging animations."}, 
                             {name: "Infographics", icon: "#icon-file", desc: "Infographics to summarize key ideas and present in a way that enhances learning experience."}, 
                             {name: "Games", icon: "#icon-rocket", desc: "Games to test their knowledge and activities that will let them experience what they learn in real-life."}, 
-                            {name: "Text", icon: "#icon-text", desc: "Text that accommodates everyone."}]
+                            {name: "Length", icon: "#icon-clock", desc: "Three weeks of modules that take a minimum of one hour with additional activities for those who wish to further their knowledge."}]
 
 
 const Delivery = () => {
     return (
-        <div className="delivery">
+        <div className="delivery content-container">
             <div className="delivery__cards">
-                { deliveryContent.map((card, index) => {
+                { deliveryInfo.map((card, index) => {
                     return(
-                        <div className="delivery__card" key={index}>
-                            <svg className="delivery__card--icon">
+                        <div className="card" key={index}>
+                            <svg className="card__icon">
                                 <use href={sprite + card.icon}></use>
                             </svg>
-                            <span className="delivery__card--title">
+                            <span className="card__title">
                                 { card.name }
                             </span>
-                            <span className="delivery__card--desc">
+                            <span className="card__desc">
                                 { card.desc }
                             </span>
                         </div>

@@ -1,12 +1,10 @@
 
 .contact {
-
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     height: $page-height;
     align-content: start;
     padding-top: 10rem;
-
 
     &__form {
         grid-row: 2 / 3;
