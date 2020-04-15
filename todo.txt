@@ -1,8 +1,0 @@
-Polishing Ideas
-- Hide 
-     - Post request for contact email
-     - Subscribe //const url = "https://tiberlearning.us3.list-manage.com/subscribe/post?u=5a20b2f5f9cf7486ca46ff52a&amp;id=c73c3b3c64"
-
-
-Contact Page
-- Change reciever email to whatever tiber again
