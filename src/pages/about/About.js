@@ -26,9 +26,9 @@ const About = () => {
 
     return (
         <div className="about" >
-            <h2 className="about__paragraph about__paragraph--1">Tiber is an online learning platform that teaches Ontario high school students financial literacy and entrepreneurial skills.</h2>
+            <h2 className="about__paragraph about__paragraph--1">Tiber Learning is an online platform that teaches high school students financial literacy and entrepreneurial skills.</h2>
             <h2 className="about__paragraph about__paragraph--2">Modules outfitted with games and videos enable students to learn in an engaging and meaningful style.</h2>
-            <h2 className="about__paragraph about__paragraph--3">Tiber introduces real-life applications of mathematical and financial concepts that will be valuable to students, as it increases independence, deepens understanding and helps to kickstart their future!</h2>
+            <h2 className="about__paragraph about__paragraph--3">Tiber Learning introduces real-life applications of mathematical and financial concepts that will be valuable to students to kickstart their future!</h2>
         
             <img className="about__background about__background--1" src={ background_1 } alt="background 1"/>
             <img className="about__background about__background--2" src={ background_2 } alt="background 2"/>
@@ -42,17 +42,20 @@ const About = () => {
 
             <div className="about__info">
 
-                { content.map(( card, index ) => {
-                    return (
-                        <Card item={ card } key={ index } />
-                    )
-                }) }
+
+                <div className="about__cards">
+                    { content.map(( card, index ) => {
+                        return (
+                            <Card item={ card } key={ index } />
+                        )
+                    }) }
+                </div>
                 <div className="about__content">
                     <h2 className="about__content--heading">{selected.name}</h2>
 
-                    { selected.name === "Delivery" && <Delivery content={ selected } /> }
-                    { selected.name === "Content" && <Content content={ selected } /> }
-                    { selected.name === "Resources" && <Resources content={ selected } /> }
+                    { selected.name === "delivery" && <Delivery content={ selected } /> }
+                    { selected.name === "content" && <Content content={ selected } /> }
+                    { selected.name === "resources" && <Resources content={ selected } /> }
                 </div>
             </div>
         </div>

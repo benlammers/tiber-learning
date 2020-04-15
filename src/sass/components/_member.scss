@@ -1,33 +1,48 @@
 
 .member {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    animation: fadeIn .8s;
 
-    &:hover &__image {
-        transform: translateY(-4px);
-        box-shadow: $shadow-dark-2;
+    display: grid;
+    justify-items: center;
+    width: 26rem;
+    grid-template-columns: max-content;
+    padding: 3rem;
+
+    @media only screen and (max-width: $bp-large) { 
+        width: 22rem;
     }
-
-    &:hover &__name {
-        transform: translateY(1px);
+    @media only screen and (max-width: $bp-small) { 
+        width: 32rem;
     }
     
     &__image {
         border-radius: 50%;
-        width: 60%;
+        width: 16rem;
         height: auto;
         box-shadow: $shadow-dark-1;
         margin-bottom: 1rem;
         transition: all .2s;
+
+        @media only screen and (max-width: $bp-large) { 
+            width: 16rem;
+        }
+        @media only screen and (max-width: $bp-small) { 
+            width: 22rem;
+        }
     }
 
     &__name {
         font-family: $font-primary;
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 600;
         transition: all .2s;
+
+        @media only screen and (max-width: $bp-large) { 
+            font-size: 2rem;
+        }
+        @media only screen and (max-width: $bp-small) { 
+            font-size: 2.4rem;
+        }
     }
 }
 

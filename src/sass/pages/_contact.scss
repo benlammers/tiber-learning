@@ -4,12 +4,12 @@
     grid-template-columns: repeat(8, 1fr);
     height: $page-height;
     align-content: start;
-    padding-top: 10rem;
+    padding-top: 6rem;
 
     &__form {
         grid-row: 2 / 3;
         grid-column: 1 / -1;
-        animation: fadeIn .8s; //ANIMATION
+        animation: fadeIn .8s;
 
         width: 100%;
         background: linear-gradient(to bottom, $color-secondary 0%, $color-secondary 50%, $color-primary 50%, $color-primary 50%, $color-primary 100%);
@@ -21,6 +21,12 @@
         column-gap: 2rem;
         row-gap: 4rem;
 
+        @media only screen and (max-width: $bp-small) {
+            grid-template-rows: 2vh repeat(4, min-content) 2vh;
+            row-gap: 2rem;
+        }
+
+
         & > * {
             font-family: $font-display;
             padding: 0.5rem 2rem;
@@ -28,6 +34,27 @@
             border: $color-grey-light-1 2px solid;
             border-radius: 5px;
             background-color: #FFF;
+            @media only screen and (max-width: $bp-medium) {
+                font-size: 2.6rem;
+            }
+            @media only screen and (max-width: $bp-small) {
+                font-size: 3rem;
+            }
+        }
+
+        &--confirmation {
+            animation: fadeIn 1s;
+            border: none;
+            outline: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-row: 1 / -1;
+            grid-column: 2 / -2;
+            background-color: transparent;
+            font-size: 5rem;
+            height: 50vh;
         }
 
         &--heading {
@@ -36,24 +63,43 @@
             font-family: $font-display;
             min-width: max-content;
             font-size: 3rem;
+            @media only screen and (max-width: $bp-medium) {
+                font-size: 3.4rem;
+            }
+            @media only screen and (max-width: $bp-small) {
+                font-size: 4rem;
+            }
         }
 
         &--message {
             grid-row: 3 / 4;
             grid-column: 2 / 12;
-            height: 16rem;
+            height: 28rem;
             resize: none;
             padding: 1rem 2rem;
+            @media only screen and (max-width: $bp-medium) {
+                height: 36rem;
+            }
+            @media only screen and (max-width: $bp-small) {
+                height: 50rem;
+            }
         }
 
         &--name {
             grid-row: 4 / 5;
             grid-column: 2 / 5;
+            @media only screen and (max-width: $bp-small) {
+                grid-row: 5 / 6;
+                grid-column: 2 / 9;
+            }
         }
 
         &--email {
             grid-row: 4 / 5;
             grid-column: 5 / 10;
+            @media only screen and (max-width: $bp-small) {
+                grid-column: 2 / -2;
+            }
         }
 
         &--button {
@@ -61,6 +107,10 @@
             grid-column: 10 / 12;
             cursor: pointer;
             transition: all .3s;
+            @media only screen and (max-width: $bp-small) {
+                grid-row: 5 / 6;
+                grid-column: 9 / 12;
+            }
 
             &:hover {
                 background-color: $color-grey-light-1;

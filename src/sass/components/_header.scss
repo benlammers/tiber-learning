@@ -10,15 +10,28 @@
     justify-content: center;
     padding-right: 5rem; 
     padding-left: 2rem;   
+    
+    @media only screen and (max-width: $bp-medium) { 
+        width: 100vw;
+    }
 
     &__logo-container {
         display: flex;
         padding-left: 2rem;
+        z-index: 3000;
+
+        @media only screen and (max-width: $bp-medium) { 
+            padding-top: 4rem;
+        }
     }
 
     &__logo {
         width: 14rem;
         display: block;
+
+        @media only screen and (max-width: $bp-small) { 
+            width: 20vw;
+        }
     }
 
     &__links {
@@ -32,6 +45,10 @@
         padding: .2rem 2rem;
         cursor: pointer;
         position: relative;
+
+        @media only screen and (max-width: $bp-medium) { 
+            display: none;
+        }
 
         &:hover &--img {
             transform: translateX(-5%);

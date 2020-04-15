@@ -12,6 +12,9 @@ $color-grey-light-2: #AAA;
 $color-grey-dark-1: #54483A;
 $color-grey-dark-2: #6D5D4B;
 
+$color-white: #FFF;
+$color-black: #000;
+
 $color-error: #A81E1E;
 $color-success: #FFF;
 
@@ -23,9 +26,11 @@ $font-display: "Francois One", sans-serif;
 $header-height: 8rem;
 $footer-height: 18rem;
 $page-height: calc(100vh - #{$header-height} - #{$footer-height});
+$home-page-row: calc((100vh - #{ $header-height } - #{ $footer-height } - 15vh)/5);
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; //1200px
+$bp-huge: 93.75em; //1500px
+$bp-largest: 75em; // 1200px
 $bp-large: 62.5em; //1000px
 $bp-medium: 50em; //800px  800/16 = 50em
 $bp-small: 37.5em; // 600px

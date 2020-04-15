@@ -1,19 +1,8 @@
 Polishing Ideas
-- Page transitions
-     - router transitions https://medium.com/@khwsc1/step-by-step-guide-of-simple-routing-transition-effect-for-react-with-react-router-v4-and-9152db1566a0
-- Pig animation
-- Text selection colours
-- Optimize images
-- Tiber Learning everywhere
 - Hide 
      - Post request for contact email
      - Subscribe //const url = "https://tiberlearning.us3.list-manage.com/subscribe/post?u=5a20b2f5f9cf7486ca46ff52a&amp;id=c73c3b3c64"
 
 
-About Page
-- Make toggle buttons animate to show clickable
-
 Contact Page
-- Show response when contact email sent
 - Change reciever email to whatever tiber again
-- Exec summary download button?     <a href='/tiber-executive-summary.pdf' download ><h4>Download our Executive Summary</h4></a>

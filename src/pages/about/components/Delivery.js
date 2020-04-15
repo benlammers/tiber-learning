@@ -16,12 +16,14 @@ const Delivery = () => {
                 { deliveryInfo.map((card, index) => {
                     return(
                         <div className="card" key={index}>
-                            <svg className="card__icon">
-                                <use href={sprite + card.icon}></use>
-                            </svg>
-                            <span className="card__title">
-                                { card.name }
-                            </span>
+                            <div className="card__heading">
+                                <svg className="card__icon">
+                                    <use href={sprite + card.icon}></use>
+                                </svg>
+                                <span className="card__title">
+                                    { card.name }
+                                </span>
+                            </div>
                             <span className="card__desc">
                                 { card.desc }
                             </span>

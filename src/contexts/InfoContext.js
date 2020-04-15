@@ -11,9 +11,9 @@ const bluePrint = require("../img/how-it-works/blue-print.png");
 
 const InfoContextProvider = (props) => {
 
-    const content = [{ name: "Delivery", img: laptopInfo, index: 0 }, 
-                    { name: "Content", img: newspaper, index: 1 }, 
-                    { name: "Resources", img: bluePrint, index: 2 }];
+    const content = [{ name: "delivery", img: laptopInfo, index: 0 }, 
+                    { name: "content", img: newspaper, index: 1 }, 
+                    { name: "resources", img: bluePrint, index: 2 }];
 
     const [selected, setSelected] = useState(content[0]);  //Holds reference to Info items of selected current Info
 

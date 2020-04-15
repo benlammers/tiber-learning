@@ -1,6 +1,11 @@
 
 .get-started {
     height: $page-height;
+    
+    @media only screen and (max-width: $bp-medium) { 
+        height: calc(#{$page-height} - #{$footer-height});   
+    }
+
     width: 100%;
     display: grid;
 
@@ -18,14 +23,27 @@
         text-align: center;
 
         animation: moveInRight .6s ease-out; //set animation to be done 
-        
+
+        @media only screen and (max-width: $bp-medium) { 
+            font-size: 5rem;   
+        }
+        @media only screen and (max-width: $bp-small) { 
+            font-size: 4rem;   
+        }
+
     }
 
     &__background {
+        overflow: hidden;
         object-fit: cover;
         animation: moveInLeft .6s ease-out; //set animation to be done 
-
         grid-row: 2 / 8;
         grid-column: 3 / 11;
+        @media only screen and (max-width: $bp-medium) { 
+            width: 140%;
+        }
+        @media only screen and (max-width: $bp-small) { 
+            width: 120%; 
+        }
     }
 }

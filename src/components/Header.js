@@ -1,6 +1,7 @@
 
 import React from "react"
 import { NavLink } from "react-router-dom"
+import Navigation from "./Navigation";
 
 const Header = () => {
 
@@ -32,6 +33,8 @@ const Header = () => {
                 <span>Contact Us</span>
                 <img className="header__links--img" src={ menuImg } alt="paint splash"/>
             </NavLink>
+
+            <Navigation />
         </header>
     )
 }

@@ -1,0 +1,194 @@
+.navigation {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    //stop highlight from showing up if off chance nav icon is mashed
+    display: none;
+
+    @media only screen and (max-width: $bp-medium) { 
+        display: block;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: $color-white;
+        height: 8rem;
+        width: 8rem;
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        border-radius: 50%;
+        z-index: 2000; //above anything else
+        box-shadow: 0 .75rem 2rem rgba($color-black, .4);
+
+        text-align: center;
+        cursor: pointer;
+                
+        @media only screen and (max-width: $bp-small) { 
+            top: 3rem;
+            right: 3rem;
+        }
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 5rem;
+        right: 5rem;
+        background-image: radial-gradient($color-primary, $color-primary-dark);
+        z-index: 1000; //above all but nav and its button
+        
+        transition: transform .8s cubic-bezier(.86, 0, .07, 1);
+        
+        @media only screen and (max-width: $bp-small) { 
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+    
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0; // positioned in top right but covers whole viewport
+        z-index: 1500; //on top of nav background but below button
+
+        opacity: 0; //to hide when not selected
+        width: 0;
+        transition: all .8s cubic-bezier(.68, -.55, .265, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__links {
+        pointer-events: none;
+
+        &:link,
+        &:visited {
+            display: inline-block; //helps for padding and transform
+            font-family: $font-display;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: .2rem;
+            padding: 1rem 6rem;
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+    
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            background-size: 225%;
+
+            transition: all .4s;
+
+            span {
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+        &:hover,
+        &:active {
+            background-position: 100%; //starts at 0%, need this trick because linear gradient does not animate
+            color: $color-primary;
+            transform: translateX(
+                1rem);
+        }
+    }
+
+    //FUNCTIONALITY
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    &__checkbox:checked ~ &__nav &__links {
+        pointer-events: all;
+    }
+
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 4rem;
+        @media only screen and (max-width: $bp-small) { 
+            margin-top: 3.8rem;
+        }
+        
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-2;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            backface-visibility: hidden; //does this make it smoother?
+        }
+
+        &::before { 
+            top: -.8rem; 
+            @media only screen and (max-width: $bp-small) { 
+                top: -1rem; 
+            }
+        }
+        &::after { 
+            top: .8rem; 
+            @media only screen and (max-width: $bp-small) { 
+                top: 1.1rem; 
+            }
+        }
+    }
+
+    &__button:hover &__icon::before { 
+        top: -1rem; 
+        @media only screen and (max-width: $bp-small) { 
+            top: -1.2rem; 
+        }
+    }
+    &__button:hover &__icon::after { 
+        top: 1rem; 
+        @media only screen and (max-width: $bp-small) { 
+            top: 1.3rem; 
+        }
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}

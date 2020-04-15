@@ -49,7 +49,7 @@ const Team = () => {
                 <img className="team__images--enactus" src={ enactus } alt="Enactus Logo" />
                 <img className="team__images--arrow-2" src={ arrow2 } alt="arrow" />
                 <img className="team__images--tiber" src={ tiber} alt="Tiber Logo" />
-                <h2 className="team__paragraph">We are a group of Queen’s University students who began Tiber as an Enactus project who are passionate about educating youth and helping fellow students! There was a void in the Ontario curriculum we saw it and want to fix it.</h2>
+                <h2 className="team__paragraph">We are a group of Queen’s University students who began Tiber Learning as an Enactus project who are passionate about educating youth and helping fellow students! There was a void in the Ontario curriculum we saw it and want to fix it.</h2>
             </div>
 
             <div className="partners">

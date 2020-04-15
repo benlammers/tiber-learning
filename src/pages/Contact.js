@@ -1,14 +1,21 @@
 
 import React, { useState } from "react"
 
+import emailAction from '../constants/emailAction'
+
 const Contact = () => {
     const sendEmail = (e) => {
+        setName("");
+        setEmail("");
+        setMessage("");
+        setHasSent(true);
+
         e.preventDefault()
 
-        var formData ={message: message, name: name, email: email, formDataNameOrder: "[\"message\", \"name\", \"email\"]", formGoogleSheetName: "responses", formGoogleSendEmail: "21benlammers@gmail.com"}
+        var formData ={message: message, name: name, email: email, formDataNameOrder: "[\"message\", \"name\", \"email\"]", formGoogleSheetName: "responses", formGoogleSendEmail: "general@tiberlearning.com"}
         console.log(formData)
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', "https://script.google.com/macros/s/AKfycbz_1pUP2Oj8Z-aHk-68zQvS77Qk-4biImCh5OYP1A/exec");
+        xhr.open('POST', emailAction);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function(){
             xhr.onreadystatechange = function() {
@@ -23,21 +30,30 @@ const Contact = () => {
         xhr.send(encoded);
     }
 
+    const [ hasSent, setHasSent ] = useState(false);
     const [ name, setName ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ message, setMessage ] = useState("");
 
     return (
         <div className="contact">
+        { hasSent ? 
+            <form className="contact__form" onSubmit= { sendEmail }>
+                <div className="contact__form--confirmation">
+                    <span>Thank you for your message</span>
+                </div>
+            </form>
+            :
             <form className="contact__form" onSubmit= { sendEmail }>
                 <label className="contact__form--heading" htmlFor="message">Contact Us</label>
-                <textarea className="contact__form--message" id="message" name="message" rows="10" placeholder="Message" spellCheck="false" onChange={(e) => setMessage(e.target.value)}/>
+                <textarea className="contact__form--message" value={ message } id="message" name="message" rows="10" placeholder="Message" spellCheck="false" onChange={(e) => setMessage(e.target.value)}/>
 
-                <input className="contact__form--name" id="name" name="name" placeholder="Name" spellCheck="false" onChange={(e) => setName(e.target.value)}/>
-                <input className="contact__form--email" id="email" name="email" type="email" spellCheck="false" required placeholder="Email Address" onChange={(e) => setEmail(e.target.value)}/>
+                <input className="contact__form--name" value={ name } id="name" name="name" placeholder="Name" spellCheck="false" onChange={(e) => setName(e.target.value)}/>
+                <input className="contact__form--email" value={ email } id="email" name="email" type="email" spellCheck="false" required placeholder="Email Address" onChange={(e) => setEmail(e.target.value)}/>
 
-                <input type="submit" className="contact__form--button" value="Submit" />
+                <input type="submit" className="contact__form--button" value="Submit" /> 
             </form>
+        }
         </div>
     )
 }

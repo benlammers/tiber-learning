@@ -1,28 +1,44 @@
 
 .team {
     display: grid;
-    grid-template-columns: 16vw repeat(4, 1fr) 16vw;
+    grid-template-columns: 8vw repeat(4, 1fr) 8vw;
     grid-template-rows: repeat(2, min-content) 6vh;  //6vh is set for a gap before skewed div
+    @media only screen and (max-width: $bp-large) { 
+        grid-template-columns: 6vw repeat(4, 1fr) 6vw;
+    }
+    @media only screen and (max-width: $bp-medium) { 
+        grid-template-columns: 5vw repeat(4, 1fr) 5vw;
+    }
+    @media only screen and (max-width: $bp-small) { 
+        grid-template-columns: 2vw repeat(4, 1fr) 2vw;
+    }
     justify-items: center;
-    row-gap: 6rem;
+    row-gap: 4rem;
     margin-bottom: 3rem;
 
     &__heading {
+        animation: moveInRight .8s;
+
         font-size: 4rem;
         grid-row: 1 / 2;
         grid-column: 1 / -1;
-        padding-top: 4rem;       
+        padding-top: 4rem;     
+        @media only screen and (max-width: $bp-small) { 
+            padding-top: 6rem;   
+        }  
     }
 
     &__members {
         grid-column: 2 / span 4;
         grid-row: 2 / 3;
-        row-gap: 3rem;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     &__queens {
+        animation: fadeIn .8s;
+
         padding: 2rem 0 8rem;
         margin-bottom: 2rem;
         box-shadow: $shadow-dark-3;
@@ -120,6 +136,10 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, max-content);
+        @media only screen and (max-width: $bp-large) { 
+            grid-template-columns: repeat(2, max-content);
+            row-gap: 5rem;
+        }
         column-gap: 10rem;
     }
 

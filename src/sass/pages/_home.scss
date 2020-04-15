@@ -1,11 +1,15 @@
 
 .home {
     display: grid;
-
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] 
         minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     grid-template-rows: calc(100vh - #{ $header-height }) 16vh;
 
+    @media only screen and (max-width: $bp-medium) { 
+        grid-template-columns: [full-start] 1fr [center-start] repeat(3, [col-start] 
+        minmax(min-content, 16rem) [col-end]) [center-end] 1fr [full-end];
+        grid-template-rows: repeat(5, $home-page-row) 15vh;
+    }
     column-gap: 1rem;
 
     &__background {
@@ -17,20 +21,39 @@
         justify-self: center;
         z-index: 0;
         margin-bottom: $header-height;
-
         animation: fadeIn .6s;
+
+        @media only screen and (max-width: $bp-medium) { 
+            grid-row: 2 / 5;
+            margin-bottom: 0;
+            margin-bottom: 4rem;
+            animation-duration: 1s;
+        }
+
     }
 
     &__img {
         display: block;
         height: 32rem;
-        grid-column: 3 / span 3;
+        grid-column: 2 / span 3;
         grid-row: 1 / 2;
         align-self: center;
         justify-self: center;
         z-index: 1;
         margin-bottom: $header-height * 2;
         animation: moveInLeft .6s ease-out; //set animation to be done 
+        
+        @media only screen and (max-width: $bp-medium) { 
+            grid-row: 2 / 4;
+            margin-bottom: 2rem;
+            align-self: end;
+            height: 30rem;
+            animation-duration: 1s;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            height: 40vw;
+        }
     }
 
     &__heading {
@@ -38,6 +61,7 @@
         text-align: center;
         grid-column: 6 / span 3;
         grid-row: 1 / 2;
+
         align-self: center;
         justify-self: center;
         z-index: 1;
@@ -45,12 +69,24 @@
         padding-bottom: $header-height * 1.5;
 
         animation: moveInRight .6s ease-out; //set animation to be done 
+
+        @media only screen and (max-width: $bp-medium) { 
+            grid-row: 4 / 5;
+            grid-column: 2 / span 3;
+            font-size: 6rem;
+            padding-bottom: 0;
+            align-self: start;
+            animation-duration: 1s;
+        }
     }
 }
 
 .subscribe {
     width: 100%;
     grid-column: 1 / -1;
+    @media only screen and (max-width: $bp-medium) { 
+        grid-row: 6 / 7;
+    }
     background: linear-gradient(to bottom, $color-secondary 0%, $color-secondary 50%, $color-primary 50%, $color-primary 50%, $color-primary 100%);
     box-shadow: $shadow-dark-3;
 
@@ -66,6 +102,10 @@
         grid-template-rows: 1fr 2fr 1fr;
         grid-template-columns: repeat(6, 1fr);
         column-gap: 1rem;
+
+        @media only screen and (max-width: $bp-medium) { 
+            grid-template-rows: 1fr 1fr 1fr;
+        }
     }
 
     &__text {
@@ -87,6 +127,9 @@
         border: $color-grey-light-1 2px solid;
         border-radius: 5px;
         background-color: #FFF;
+        @media only screen and (max-width: $bp-medium) { 
+            font-size: 2.8rem;
+        }
     }
 
     &__button {
