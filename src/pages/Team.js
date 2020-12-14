@@ -18,6 +18,10 @@ const Team = () => {
                       {name: "Team Member", headshot: Blank}, 
                       {name: "Team Member", headshot: Blank}, 
                       {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
                       {name: "Team Member", headshot: Blank}
                     ];
 
