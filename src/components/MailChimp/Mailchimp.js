@@ -5,34 +5,6 @@ import PropTypes from "prop-types";
 class Mailchimp extends React.Component {
   state = {};
 
-  handleSubmit(evt) {
-    evt.preventDefault();
-    const { fields, action } = this.props;
-    const values = fields.map(field => {
-      return `${field.name}=${encodeURIComponent(this.state[field.name])}`;
-    }).join("&");
-    const path = `${action}&${values}`;
-    const url = path.replace('/post?', '/post-json?');
-    const regex = /^([\w_.\-+])+@([\w-]+.)+([\w]{2,10})+$/;
-    const email = this.state["EMAIL"];
-    (!regex.test(email)) ? this.setState({ status: "empty" }) : this.sendData(url);
-  };
-
-  sendData(url) {
-    this.setState({ status: "sending" });
-    jsonp(url, { param: "c" }, (err, data) => {
-      if (data.msg.includes("already subscribed")) {
-        this.setState({ status: "duplicate" });
-      } else if (err) {
-        this.setState({ status: "error" });
-      } else if (data.result !== "success") {
-        this.setState({ status: "error" });
-      } else {
-        this.setState({ status: "success" });
-      };
-    });
-  }
-
   render() {
     const { fields, className } = this.props;   //const { fields, styles, className, buttonClassName } = this.props;
     const messages = {
@@ -41,7 +13,7 @@ class Mailchimp extends React.Component {
     }
     const { status } = this.state;
     return (
-      <form onSubmit={this.handleSubmit.bind(this)} className={className}>
+      <form className={className}>
         <div className="subscribe__input">
             {fields.map(input =>
             <input className="subscribe__text"

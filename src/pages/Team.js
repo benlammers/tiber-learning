@@ -3,13 +3,6 @@ import React from "react"
 import Member from "../components/Member";
 
 const Team = () => {
-
-    const Christian = require("../img/team/christian.jpg");
-    const Hannah = require("../img/team/hannah.jpg");
-    const Sophie = require("../img/team/sophie.jpg");
-    const Iulia = require("../img/team/iulia.jpg");
-    const Ben = require("../img/team/ben.jpg");
-    const David = require("../img/team/david.jpg");
     const Blank = require("../img/team/blank.png");
 
     const arrow1 = require("../img/team/arrow-1.png");
@@ -18,16 +11,14 @@ const Team = () => {
     const enactus = require("../img/team/enactus.png");
     const tiber = require("../img/team/logo.png");
 
-    const members = [{name: "Christian Soriano", headshot: Christian}, 
-                        {name: "Hannah Gray", headshot: Hannah},
-                        {name: "Sophie Campbell", headshot: Sophie},
-                        {name: "Iulia Iancu", headshot: Iulia},
-                        {name: "Ben Lammers", headshot: Ben},
-                        {name: "David Strohmer", headshot: David},
-                        {name: "Isla Hawkins", headshot: Blank},
-                        {name: "Kevin Ding", headshot: Blank},
-                        {name: "Laura Tang", headshot: Blank},
-                        {name: "Luca Nigro", headshot: Blank}
+    const members = [{name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}, 
+                      {name: "Team Member", headshot: Blank}
                     ];
 
     const partners = [{name: "DDQIC", url: "https://www.queensu.ca/innovationcentre/", img: require("../img/sponsors/queens-innovation.jpg")},
